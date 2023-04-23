@@ -27,17 +27,17 @@
     console.log(articleSelector);
 
     /* find the correct article using the selector (value of 'href' attribute) */
-    const targetArticle = document.querySelector(articleSelector)
+    const targetArticle = document.querySelector(articleSelector);
 
     /* add class 'active' to the correct article */
     targetArticle.classList.add('active');
-  }
+  };
   
  
 
   const optArticleSelector = '.post',
-  optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles';
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
 
   function generateTitleLinks(){
 
@@ -63,7 +63,7 @@
 
 
     /* insert link into titleList */
-      html = html + linkHTML
+      html = html + linkHTML;
     }
     titleList.innerHTML = html;
 
@@ -71,9 +71,9 @@
   
     for(let link of links){
       link.addEventListener('click', titleClickHandler);
-      console.log(links)
+      console.log(links);
     }
   }
 
-generateTitleLinks();
+  generateTitleLinks();
 }
