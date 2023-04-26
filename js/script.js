@@ -115,7 +115,7 @@ function tagClickHandler(event){
   /* find all tag links with class active */
   const activeTagLink = document.querySelectorAll('.data-tags a.active');
   /* START LOOP: for each active tag link */
-  for(let activeTagLink of activeTagLinks){
+  for(let activeTagLink of optArticleTagsSelector){
     /* remove class active */
     activeTagLink.classList.remove('active');
   /* END LOOP: for each active tag link */
@@ -123,7 +123,7 @@ function tagClickHandler(event){
   /* find all tag links with "href" attribute equal to the "href" constant */
   const foundTagLink = document.querySelectorAll('.data-tags a[href="${href}"]');
   /* START LOOP: for each found tag link */
-  for(let foundTagLink of foundTagLinks) {
+  for(let foundTagLink of optArticleTagsSelector) {
     /* add class active */
     foundTagLink.classList.add('active');
   /* END LOOP: for each found tag link */
@@ -135,7 +135,7 @@ function addClickListenersToTags(){
   /* find all links to tags */
   const tagLink = document.querySelectorAll('.data-tags a');
   /* START LOOP: for each link */
-  for(let tagLink of taglinks){
+  for(let tagLink of optArticleTagsSelector){
     /* add tagClickHandler as event listener for that link */
     tagLink.addClickListener('click', tagClickHandler);
   /* END LOOP: for each link */
