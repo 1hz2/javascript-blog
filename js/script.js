@@ -61,7 +61,7 @@ function generateTitleLinks(customSelector = ''){
   }
 }
 generateTitleLinks();
-function calculateTagsParams(){
+function calculateTagsParams(tags){
   const max = 0, min = 999999;
   const params = { max, min };
   for(let tag of tags){
