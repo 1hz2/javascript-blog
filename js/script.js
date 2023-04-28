@@ -1,6 +1,8 @@
 'use strict';
 const templates = {
-  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
+  authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML)
 };
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
@@ -79,7 +81,7 @@ function calculateTagClass(count, params){
   const normalizedMax = params.max - params.min;
   const percentage = normalizedCount / normalizedMax;
   const classNumber = Math.floor( percentage * (optCloudClassCount - 1) + 1 );
-  return optCloudClassCount, classNumber;
+  return optCloudClassPrefix, classNumber;
 }
 function generateTags(){
   /* [NEW] create a new variable allTags with an empty object */
