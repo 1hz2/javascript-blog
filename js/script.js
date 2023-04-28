@@ -9,7 +9,6 @@ const optArticleSelector = '.post',
   optTagsListSelector = '.tags.list',
   optCloudClassCount = '5',
   optCloudClassPrefix = 'tag-size-';
-let tags = {};
 const titleClickHandler = function(event){
   event.preventDefault();
   const clickedElement = this;
@@ -154,7 +153,7 @@ function tagClickHandler(event){
   /* find all tag links with "href" attribute equal to the "href" constant */
   const foundTagLink = document.querySelectorAll('.data-tags a[href="${href}"]');
   /* START LOOP: for each found tag link */
-  for(let foundTagLink of optArticleTagsSelector) {
+  for(let foundTagLink of foundTagLinks) {
     /* add class active */
     foundTagLink.classList.add('active');
   /* END LOOP: for each found tag link */
@@ -166,7 +165,7 @@ function addClickListenersToTags(){
   /* find all links to tags */
   const tagLink = document.querySelectorAll('.data-tags a');
   /* START LOOP: for each link */
-  for(let tagLink of optArticleTagsSelector){
+  for(let tagLink of tagLinks){
     /* add tagClickHandler as event listener for that link */
     tagLink.addClickListener('click', tagClickHandler);
   /* END LOOP: for each link */
